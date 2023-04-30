@@ -20,16 +20,21 @@ def main():
 
                     for ul in ul_tags:
                         li_tags = ul.find_all('li')
-                        for li in li_tags:
-                            text_to_append += (str(li.text) + '\n')
+                        if li_tags is not None:
+                            for li in li_tags:
+                                text_to_append += (str(li.text) + '\n')
 
-                    if text_to_append != '':
-                        with open(f'H:\Programming\DOCTOR WHERE\cleveland_\symptomsANDcauses_TEXT/{file[:-5]}.text', 'w') as h:
-                            h.write(text_to_append)
+                p_tags = div.find_all('p')
+                if p_tags is not None:
+                    for p in p_tags:
+                        text_to_append += (str(p.text) + '\n')
 
+                if text_to_append != '':
+                    with open(f'H:\Programming\DOCTOR WHERE\cleveland_\symptomsANDcauses_TEXT/{file[:-5]}.text', 'w') as h:
+                        h.write(text_to_append)
+                        text_to_append = ''
         print(
             f"Processing item {i+1}/{total_items} ({(i+1)/total_items*100:.2f}%): {file[:-5]}")
-
     return
 
 
