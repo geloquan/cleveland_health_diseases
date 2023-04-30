@@ -1,0 +1,4 @@
+# updating and installing these ables me to run my python script
+sudo apt-get update
+sudo apt-get install python3
+
