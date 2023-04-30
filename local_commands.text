@@ -1,0 +1,6 @@
+# after scraping /health/diseases and placed all files in one directory from a remote server,
+# I now just need to copy those contents or html/text files to my local server.
+# -r is an indcation that I am copying directory's/folder's files RECURSIVELY
+# putting start&end quotes for assurance, with or without will no have difference unless your a part of your directory name has a space ASCII character
+
+scp -r root@(YOUR_REMOTE_IP_ADDRESS_NO_PORT_NEEDED):/path_to_destination_folder "(LOCATION_TO_TRANSFER_THOSE_FILES)"
